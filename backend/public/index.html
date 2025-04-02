@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT for Teachers</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #daa616;
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        .ebook-cover {
+            max-width: 300px;
+            height: auto;
+            margin: 20px auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .ebook-details {
+            background: white;
+            padding: 30px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 20px 0;
+        }
+        body {
+    /* Your existing body styles */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    
+    /* New background image styles */
+    background-image: url('/2204_w030_n002_358a_p1_358.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    
+    /* Add overlay for better text readability */
+    position: relative;
+}
+
+/* Dark overlay to make text more readable */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.container {
+    /* Your existing container styles */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    /* Semi-transparent white background for content */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative; /* Keeps content above the overlay */
+}
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .btn-download {
+            background: #27ae60;
+            display: none;
+        }
+        .btn-download:hover {
+            background: #219653;
+        }
+        .features {
+            margin: 30px 0;
+        }
+        .features ul {
+            padding-left: 20px;
+        }
+        .features li {
+            margin-bottom: 10px;
+        }
+        .testimonials {
+            margin: 30px 0;
+            font-style: italic;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ChatGPT for Teachers</h1>
+            <p>A complete guide on how teachers could use GPT</p>
+        </header>
+        
+        <div class="ebook-details">
+            <img src="/cover-ebook.png" alt="Ebook Cover" class="ebook-cover">
+
+            
+            <h2>About This Ebook</h2>
+            <p>In today’s digital age, teachers are constantly looking for smarter ways to enhance classroom learning, simplify lesson planning, and manage administrative tasks effectively. "ChatGPT for Teachers" is the ultimate guide designed to help educators unlock the full potential of AI-powered assistance in their daily work..</p>
+            
+            <div class="features">
+                <h3>What You'll Learn:</h3>
+                <ul>
+                    <li>✅ Create engaging lesson plans, quizzes, and worksheets in minutes</li>
+                    <li>✅ Personalize learning experiences for students of all levels</li>
+                    <li>✅ Automate repetitive administrative tasks like attendance tracking and report writing</li>
+                    <li>✅ Develop effective question papers, evaluation schemes, and feedback reports</li>
+                    <li>✅ Create structured school timetables, track student attendance, and manage data efficiently</li>
+                    <li>✅ Get started instantly with 40 magical prompts that every teacher can use right away!</li>
+                </ul>
+            </div>
+            
+            <div class="price">Only ₹180</div>
+            
+            <button id="buyNowBtn" class="btn">Buy Now</button>
+            <a id="downloadBtn" href="#" class="btn btn-download">Download Your Ebook</a>
+            
+            <div class="testimonials">
+                <h3>What Readers Are Saying:</h3>
+                <p>"The 40 magical prompts at the end are just awesome. Worth every penny!" - Rohan K.</p>
+                <p>"Clear, concise, and packed with content. Highly recommended!" - Priya M.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 Yashpubl. All rights reserved.</p>
+            <p>Contact: shelgeas@gmail.com</p>
+        </footer>
+    </div>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        document.getElementById('buyNowBtn').addEventListener('click', function() {
+            fetch('/create-order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.error) {
+                    alert('Error: ' + data.error);
+                    return;
+                }
+                
+                const options = {
+                    key: data.key, // Your Razorpay key will be provided by the backend
+                    amount: data.amount,
+                    currency: data.currency,
+                    name: "Your Ebook Store",
+                    description: "Purchase of 'The Ultimate Guide' ebook",
+                    order_id: data.order_id,
+                    handler: function(response) {
+                        // Verify payment on your server
+                        fetch('/verify-payment', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                razorpay_payment_id: response.razorpay_payment_id,
+                                razorpay_order_id: response.razorpay_order_id,
+                                razorpay_signature: response.razorpay_signature
+                            })
+                        })
+                        .then(res => res.json())
+                        .then(verificationData => {
+                            if(verificationData.success) {
+                                // Show download button
+                                document.getElementById('buyNowBtn').style.display = 'none';
+                                const downloadBtn = document.getElementById('downloadBtn');
+                                downloadBtn.style.display = 'inline-block';
+                                downloadBtn.href = verificationData.download_url;
+                                alert('Payment successful! You can now download your ebook.');
+                            } else {
+                                alert('Payment verification failed: ' + verificationData.error);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Error verifying payment. Please contact support.');
+                        });
+                    },
+                    prefill: {
+                        name: "",
+                        email: "",
+                        contact: ""
+                    },
+                    theme: {
+                        color: "#3399cc"
+                    }
+                };
+                
+                const rzp = new Razorpay(options);
+                rzp.open();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error creating payment order. Please try again.');
+            });
+        });
+
+        // Check if user already purchased (simple version - would need more robust solution for production)
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if(urlParams.has('payment_id')) {
+                // In a real app, you would verify this payment_id with your backend
+                document.getElementById('buyNowBtn').style.display = 'none';
+                document.getElementById('downloadBtn').style.display = 'inline-block';
+                document.getElementById('downloadBtn').href = '/download-ebook?payment_id=' + urlParams.get('payment_id');
+            }
+        });
+    </script>
+</body>
+</html>
